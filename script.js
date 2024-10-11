@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     //and assign this to the innerHTML of feedbackDiv. Set feedbackDiv.style.color to "#dc3545".
     if(isValid=false){
         for(m of messages){
-            feedbackDiv.innerHTML = m.replace(',', '<br>');
+            feedbackDiv.innerHTML = m.join('<br>');
             feedbackDiv.style.color = "#dc3545";
         }
     }
