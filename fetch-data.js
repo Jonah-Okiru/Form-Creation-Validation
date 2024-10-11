@@ -38,11 +38,11 @@ After the loop, append userList to dataContainer.*/
 users.forEach(function(user){
     const user1 =document.createElement('li')
     user1.textContent = user1.name;
-    userList.append(user1);
+    userList.appendChild(user1);
 
 })
 // After the loop, append userList to dataContainer.
-dataContainer.append(userList);
+dataContainer.appendChild(userList);
     
 
 
