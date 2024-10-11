@@ -1,5 +1,5 @@
 // wrapping the entire script in a DOMContentLoaded event listener.
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', function(){
     // Form selection
     const form = document.getElementById('registration-form');
     // Fedback div selection
