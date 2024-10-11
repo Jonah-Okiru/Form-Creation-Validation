@@ -44,10 +44,8 @@ document.addEventListener('DOMContentLoaded', function(){
     //If isValid is false, join messages with <br> to form a single string, 
     //and assign this to the innerHTML of feedbackDiv. Set feedbackDiv.style.color to "#dc3545".
     if(isValid=false){
-        for(m of messages){
-            feedbackDiv.innerHTML = m.join('<br>');
-            feedbackDiv.style.color = "#dc3545";
-        }
+        feedbackDiv.innerHTML = messages.join("<br>");
+        feedbackDiv.style.color = "#dc3545";
     }
     
 
