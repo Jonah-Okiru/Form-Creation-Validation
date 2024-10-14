@@ -18,31 +18,33 @@ Inside fetchUserData, declare a constant apiUrl and assign it the
     // 4. Fetch Data Using try-catch:
     try{
         const response = await fetch(apiUrl)
+            // store in the constant named users
+        const users = await response.json();
+        // clearing the datacontainer(Clear the Loading Message:)
+        dataContainer.innerHTML = '';
+        // Create and Append User List:
+        // Create a <ul> element and store it in a constant named userList.
+        const userList = document.createElement('ul');
+        /* Loop through the users array with forEach, and for each user, do the following:
+        Create a <li> element.
+        Set the text content of the <li> to the user’s name.
+        Append the <li> to userList.
+        After the loop, append userList to dataContainer.*/
+        users.forEach(function(user){
+            const user1 =document.createElement('li')
+            user1.textContent = user.name;
+            userList.appendChild(user1);
+
+        });
+        // After the loop, append userList to dataContainer.
+        dataContainer.appendChild(userList);
     } catch(error){
         dataContainer.innerHTML = '';
         dataContainer = 'Failed to load user data.';
         
     }
-    // store in the constant named users
-    const users = await response.json();
-    // clearing the datacontainer(Clear the Loading Message:)
-    dataContainer.innerHTML = '';
-    // Create and Append User List:
-    // Create a <ul> element and store it in a constant named userList.
-    const userList = document.createElement('ul');
-    /* Loop through the users array with forEach, and for each user, do the following:
-Create a <li> element.
-Set the text content of the <li> to the user’s name.
-Append the <li> to userList.
-After the loop, append userList to dataContainer.*/
-users.forEach(function(user){
-    const user1 =document.createElement('li')
-    user1.textContent = user1.name;
-    userList.appendChild(user1);
+    
 
-})
-// After the loop, append userList to dataContainer.
-dataContainer.appendChild(userList);
     
 
 
